@@ -1,0 +1,31 @@
+[project]
+authors = [{name = "Scott Henderson", email = "3924836+scottyhq@users.noreply.github.com"}]
+name = "minicli"
+requires-python = ">= 3.11"
+version = "0.1.0"
+dependencies = ["xarray", "h5netcdf", "rich"]
+
+[project.scripts]
+# You can add more CLI commands here
+hdf-info = "minicli.cli:app"
+
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatchling"]
+
+
+# The following sections are not necessary,
+# They come from using pixi (https://pixi.sh) for development
+[tool.pixi.workspace]
+channels = ["conda-forge"]
+platforms = ["osx-arm64"]
+
+[tool.pixi.dependencies]
+xarray = "*"
+h5netcdf = "*"
+rich = "*"
+
+[tool.pixi.pypi-dependencies]
+minicli = { path = ".", editable = true }
+
+[tool.pixi.tasks]

@@ -1,6 +1,8 @@
 # minicli
 
-The purpose of this repository is to demo how to creat a CLI app that can be installed as a package into an *existing* Python virtual environment (Or just create a new one: `conda create -n testcli pip` and `conda activate testcli`).
+The purpose of this repository is to demo how to creat a CLI app that can be installed as a package into an *existing* Python virtual environment.
+
+For demo purposes, we recommend creating a new virtual environment: `conda create -n testcli pip` and `conda activate testcli`. When you're done simply `conda env remove -n testcli`
 
 This example app is called `hdf-info` and it prints out the tree structure of an HDF5 file using `xarray`.
 

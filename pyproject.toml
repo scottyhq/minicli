@@ -18,7 +18,8 @@ requires = ["hatchling"]
 # They come from using pixi (https://pixi.sh) for development
 [tool.pixi.workspace]
 channels = ["conda-forge"]
-platforms = ["osx-arm64"]
+platforms = ["osx-arm64", "linux-64"]
+preview = ["pixi-build"]
 
 [tool.pixi.dependencies]
 xarray = "*"
@@ -29,3 +30,20 @@ rich = "*"
 minicli = { path = ".", editable = true }
 
 [tool.pixi.tasks]
+
+# basic conda packaging
+[tool.pixi.package]
+name = "minicli"
+version = "0.1.0"
+
+[tool.pixi.package.build.backend]
+name = "pixi-build-python"
+version = "==0.3.2"
+
+[tool.pixi.package.host-dependencies]
+hatchling = "*"
+
+[tool.pixi.package.run-dependencies]
+xarray = "*"
+h5netcdf = "*"
+rich = "*"

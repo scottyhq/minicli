@@ -1,3 +1,4 @@
+*.conda
 *h5
 *hdf
 
